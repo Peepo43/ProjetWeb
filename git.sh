@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-message=$2
+message=$1
 
 if [ $# -lt 1 ] 
 then
