@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/boostrap-4.0.0/dist/css/boostrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
