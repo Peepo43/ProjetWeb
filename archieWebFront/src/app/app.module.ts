@@ -9,6 +9,9 @@ import { ScreenShotSectionComponent } from './screen-shot-section/screen-shot-se
 import { PeopleSectionComponent } from './people-section/people-section.component';
 import { DownloadSectionComponent } from './download-section/download-section.component';
 import { FooterComponent } from './footer/footer.component';
+import { ScreenComponentComponent } from './screen-shot-section/screen-component/screen-component.component';
+import { CarouselSectionComponent } from './carousel-section/carousel-section.component';
+import { CarouselComponentComponent } from './carousel-section/carousel-component/carousel-component.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FooterComponent } from './footer/footer.component';
     ScreenShotSectionComponent,
     PeopleSectionComponent,
     DownloadSectionComponent,
-    FooterComponent
+    FooterComponent,
+    ScreenComponentComponent,
+    CarouselSectionComponent,
+    CarouselComponentComponent
   ],
   imports: [
     BrowserModule
