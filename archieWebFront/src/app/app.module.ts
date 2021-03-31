@@ -2,10 +2,24 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeSectionComponent } from './home-section/home-section.component';
+import { FeaturedSectionComponent } from './featured-section/featured-section.component';
+import { ScreenShotSectionComponent } from './screen-shot-section/screen-shot-section.component';
+import { PeopleSectionComponent } from './people-section/people-section.component';
+import { DownloadSectionComponent } from './download-section/download-section.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HomeSectionComponent,
+    FeaturedSectionComponent,
+    ScreenShotSectionComponent,
+    PeopleSectionComponent,
+    DownloadSectionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
