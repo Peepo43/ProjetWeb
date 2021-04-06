@@ -12,6 +12,11 @@ import { FooterComponent } from './footer/footer.component';
 import { ScreenComponentComponent } from './screen-shot-section/screen-component/screen-component.component';
 import { CarouselSectionComponent } from './carousel-section/carousel-section.component';
 import { CarouselComponentComponent } from './carousel-section/carousel-component/carousel-component.component';
+import { FormulaireComponent } from './home-section/formulaire/formulaire.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { OpenWeatherMapService } from './open-weather-map.service';
+
 
 @NgModule({
   declarations: [
@@ -25,12 +30,15 @@ import { CarouselComponentComponent } from './carousel-section/carousel-componen
     FooterComponent,
     ScreenComponentComponent,
     CarouselSectionComponent,
-    CarouselComponentComponent
+    CarouselComponentComponent,
+    FormulaireComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [OpenWeatherMapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
