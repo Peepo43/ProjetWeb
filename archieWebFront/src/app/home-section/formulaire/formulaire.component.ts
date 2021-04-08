@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {OpenWeatherMapService} from '../../open-weather-map.service';
+import { SunsetService } from '../../sunset.service';
 
 @Component({
   selector: 'app-formulaire',
@@ -10,11 +11,10 @@ import {OpenWeatherMapService} from '../../open-weather-map.service';
 export class FormulaireComponent implements OnInit {
   public formulaireSearchForm!: FormGroup;
   public dataMeteo: any;
-  constructor(
-    private formBuilder: FormBuilder,
-    private openweathermap: OpenWeatherMapService) { }
-    lat = 48.00611;
-    long = 0.199556;
+  public dataSunset: any;
+  constructor(private formBuilder: FormBuilder,
+              private openweathermap: OpenWeatherMapService,
+              private sunsetService: SunsetService) { }
     googleMapType = 'hybrid';
 
   ngOnInit(): void {
@@ -23,11 +23,22 @@ export class FormulaireComponent implements OnInit {
     });
   }
 
+  getSunset(): void {
+    this.sunsetService
+      .getData(this.dataMeteo?.coord.lon , this.dataMeteo?.coord.lat)
+      .subscribe(data => this.dataSunset = data);
+  }
+
+
   sendToAPIXU(formValues: any): void {
     this.openweathermap
       .getWeather(formValues.location)
       .subscribe(data => this.dataMeteo = data);
+    this.sunsetService
+      .getData(this.dataMeteo?.coord.lon , this.dataMeteo?.coord.lat)
+      .subscribe(data => this.dataSunset = data);
     console.log(this.dataMeteo);
+    console.log(this.dataSunset);
   }
 }
 
