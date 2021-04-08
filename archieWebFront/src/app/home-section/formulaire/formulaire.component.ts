@@ -14,6 +14,7 @@ export class FormulaireComponent implements OnInit {
     private formBuilder: FormBuilder,
     private openweathermap: OpenWeatherMapService) { }
 
+
   ngOnInit(): void {
     this.formulaireSearchForm = this.formBuilder.group({
       location: ['']
