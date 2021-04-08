@@ -13,6 +13,9 @@ export class FormulaireComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private openweathermap: OpenWeatherMapService) { }
+    lat = 48.00611;
+    long = 0.199556;
+    googleMapType = 'hybrid';
 
   ngOnInit(): void {
     this.formulaireSearchForm = this.formBuilder.group({
@@ -27,7 +30,6 @@ export class FormulaireComponent implements OnInit {
     console.log(this.dataMeteo);
   }
 }
-
 
 // 0d62963a0f6c90c582b71e8dbd7979e3
 // api.openweathermap.org/data/2.5/weather?q=Paris&APPID=0d62963a0f6c90c582b71e8dbd7979e3

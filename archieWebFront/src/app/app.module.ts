@@ -15,6 +15,7 @@ import { CarouselComponentComponent } from './carousel-section/carousel-componen
 import { FormulaireComponent } from './home-section/formulaire/formulaire.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 import { OpenWeatherMapService } from './open-weather-map.service';
 
 
@@ -36,7 +37,10 @@ import { OpenWeatherMapService } from './open-weather-map.service';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA-9W_o6Cj79I2MZnqReqbrRNidLBInYn4'
+    })
   ],
   providers: [OpenWeatherMapService],
   bootstrap: [AppComponent]
