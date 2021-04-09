@@ -17,6 +17,7 @@ export class FormulaireComponent implements OnInit {
               private sunsetService: SunsetService) { }
     googleMapType = 'hybrid';
 
+
   ngOnInit(): void {
     this.formulaireSearchForm = this.formBuilder.group({
       location: ['']

@@ -12,4 +12,9 @@ export class CarouselSectionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  imgName1 = "screen01";
+  imgName2 = "screen02";
+  imgName3 = "screen03";
+  temperature = 30;
+
 }
