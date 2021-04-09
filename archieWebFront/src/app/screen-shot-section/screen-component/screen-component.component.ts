@@ -16,7 +16,9 @@ export class ScreenComponentComponent implements OnInit {
   ) { }
 
   @Input() img : String = " ";
-  @Input() name : String = " "
+  @Input() name : String = " ";
+  ville : String = "Rome";
+  temperatureVille = "30"
 
   ngOnInit(): void {
   }

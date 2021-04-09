@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {OpenWeatherMapService} from '../open-weather-map.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -10,33 +8,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 
 export class ScreenShotSectionComponent implements OnInit {
-  public formulaireSearchForm!: FormGroup;
-  public dataMeteo: any;
-  public temperature: any;
+ 
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private openweathermap: OpenWeatherMapService) { }
+  constructor() { }
     
 
   ngOnInit(): void {
-    this.formulaireSearchForm = this.formBuilder.group({
-      location: ['']
-    });
-  }
-
-  sendToAPIXU(formValues: any): void {
-    this.openweathermap
-      .getWeather(formValues.location)
-      .subscribe(data => this.dataMeteo = data);
-    console.log(this.dataMeteo);
-  }
-
-  sendToTown(ville: string): void {
-    this.openweathermap
-      .getWeather(ville)
-      .subscribe(data => this.dataMeteo = data);
-    console.log(this.dataMeteo);
+   
   }
 
 }
