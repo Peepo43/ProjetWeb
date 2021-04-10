@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { OpenWeatherMapService } from './open-weather-map.service';
+import { SunsetService } from "./sunset.service";
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { OpenWeatherMapService } from './open-weather-map.service';
       apiKey: 'AIzaSyA-9W_o6Cj79I2MZnqReqbrRNidLBInYn4'
     })
   ],
-  providers: [OpenWeatherMapService],
+  providers: [OpenWeatherMapService, SunsetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

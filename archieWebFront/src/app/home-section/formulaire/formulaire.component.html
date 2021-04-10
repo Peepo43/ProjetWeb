@@ -23,6 +23,15 @@
         <p class="text-center">
           Temperature en Kelvin : {{this.dataMeteo?.main.temp}}
         </p>
+        <p class="text-center">
+          Levé : {{this.dataSunset?.results.sunrise}}
+        </p>
+        <p class="text-center">
+          Couché : {{this.dataSunset?.results.sunset}}
+        </p>
+        <p class="text-center">
+          Longueur : {{this.dataSunset?.results.day_length}}
+        </p>
       </div>
     </form>
   <agm-map [latitude]=this.dataMeteo?.coord.lat [longitude]=this.dataMeteo?.coord.lon [mapTypeId]='googleMapType'> </agm-map>
