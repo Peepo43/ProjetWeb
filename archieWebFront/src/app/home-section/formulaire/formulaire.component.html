@@ -1,7 +1,7 @@
 
 <div class="col-md-6">
     <h5 class="text-center my-4">Mettre une Ville:</h5>
-    <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value)">
+    <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value); getSunset(this.dataMeteo?.coord.lon, this.dataMeteo?.coord.lat)">
       <div class="form-group">
         <input
           class="form-control"
@@ -13,26 +13,20 @@
         />
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-success btn-md" (click)="getSunset(this.dataMeteo?.coord.lon, this.dataMeteo?.coord.lat)">
+        <button type="submit" class="btn btn-success btn-md" >
           Chercher</button>
       </div>
       <div class="col-md-6">
         <h3 class="text-center my-4">Résultat:</h3>
-        <p class="text-center">
-          Position : {{this.dataMeteo?.name}}
-        </p>
-        <p class="text-center">
-          Temperature en Kelvin : {{(this.dataMeteo?.main.temp-273.15).toFixed(2)}}
-        </p>
-        <p class="text-center">
-          Levé : {{this.dataSunset?.results.sunrise}}
-        </p>
-        <p class="text-center">
-          Couché : {{this.dataSunset?.results.sunset}}
-        </p>
-        <p class="text-center">
-          Longueur : {{this.dataSunset?.results.day_length}}
-        </p>
+        <p class="text-center" > Position : {{getPosition()}} </p>
+
+        <p class="text-center"> Temperature en Celsius: {{getTemperature()}} </p>
+
+        <p class="text-center"> Levé : {{getLeve()}} </p>
+
+        <p class="text-center"> Couché : {{getCouche()}} </p>
+
+        <p class="text-center"> Longueur : {{getDuree()}} </p>
       </div>
     </form>
 </div>

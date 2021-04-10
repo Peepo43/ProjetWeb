@@ -10,6 +10,7 @@ import { SunsetService } from '../../sunset.service';
 //        Logo + Carte en responsive V
 //        Rajouter le texte de Fatih
 //        Interface = proto
+//        Si -273 ne rien afficher dans Tempererature
 
 
 @Component({
@@ -21,8 +22,6 @@ export class FormulaireComponent implements OnInit {
   public formulaireSearchForm!: FormGroup;
   public dataMeteo: any;
   public dataSunset: any;
-  public lon: number;
-  public lat: number;
   constructor(private formBuilder: FormBuilder,
               private openweathermap: OpenWeatherMapService,
               private sunsetService: SunsetService) { }
@@ -37,6 +36,7 @@ export class FormulaireComponent implements OnInit {
     this.openweathermap
       .getWeather(formValues.location)
       .subscribe(data => this.dataMeteo = data);
+    // this.getSunset(this.dataMeteo?.coord.lon, this.dataMeteo?.coord.lat);
     console.log(this.dataMeteo);
   }
 
@@ -45,6 +45,30 @@ export class FormulaireComponent implements OnInit {
       .getData(lon, lat)
       .subscribe(data => this.dataSunset = data);
   }
+
+  getPosition(): string{
+    return this.dataMeteo?.name;
+  }
+
+  getTemperature(): string{
+    if ((this.dataMeteo?.main.temp - 273.15) < -100 || isNaN(this.dataMeteo?.main.temp - 273.15)){
+      return '';
+    }
+    return (this.dataMeteo?.main.temp - 273.15).toFixed(2) + '°';
+  }
+
+  getLeve(): string{
+    return this.dataSunset?.results.sunrise;
+  }
+
+  getCouche(): string{
+    return this.dataSunset?.results.sunset;
+  }
+
+  getDuree(): string{
+    return this.dataSunset?.results.day_length;
+  }
+
 }
 
 // 0d62963a0f6c90c582b71e8dbd7979e3
