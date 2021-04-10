@@ -3,8 +3,11 @@
     <div class="col-md-12">
         <div class="screen01_img" >
             <img src="assets/images/{{img}}-transparent.png" alt="" />
-            <p>Ecrire les donnes ici !!!</p>
-            <p>Il fait beau ici {{img}} {{(this.dataMeteo?.main.temp-273.15).toFixed(2)}} {{name}}</p>
+            <p id="nomVille" >{{name}}</p>
+            <p id="pays">{{this.dataMeteo?.sys.country}}</p>
+            <p id="tempDegres">{{(this.dataMeteo?.main.temp-273.15).toFixed(2)}}° C </p>
+            <p id="etatTemps">Levé : {{this.leverSoleil}}</p>
+
         </div>
     </div>
 </div><!--End off Screen01-->

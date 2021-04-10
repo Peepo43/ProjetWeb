@@ -1,5 +1,6 @@
 import { Component,EventEmitter, OnInit ,Input} from '@angular/core';
 import {OpenWeatherMapService} from '../../open-weather-map.service';
+import { SunsetService } from '../../sunset.service';
 
 
 @Component({
@@ -10,11 +11,15 @@ import {OpenWeatherMapService} from '../../open-weather-map.service';
 export class ScreenComponentComponent implements OnInit {
 
   public dataMeteo: any;
-  public temperature : any;
+  public dataSunset: any;
   public temperatureConv : any;
+  public lon: number;
+  public lat: number;
+  public leverSoleil: string;
 
   constructor(
-    private openweathermap: OpenWeatherMapService
+    private openweathermap: OpenWeatherMapService,
+    private sunsetService: SunsetService
   ) { }
 
   @Input() img : String = " ";
@@ -28,15 +33,14 @@ export class ScreenComponentComponent implements OnInit {
     .subscribe(data => this.dataMeteo = data);
     
     this.temperatureConv=this.dataMeteo?.main.temp;
+
+    this.sunsetService
+      .getData(this.lon, this.lat)
+      .subscribe(data => this.dataSunset = data);
+
+      this.leverSoleil = this.dataSunset?.results.sunrise;
   }
   
-
-  /*sendToAPIXU(name: string): void {
-    this.openweathermap
-      .getWeather(name)
-      .subscribe(data => this.dataMeteo = data);
-    console.log(this.dataMeteo);
-  }*/
 
 }
 

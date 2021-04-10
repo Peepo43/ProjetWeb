@@ -1,7 +1,38 @@
+#nomVille{
+    position:absolute;
+    top:80px;
+    right: 20px;
+    left: 20px;
+    z-index:2;
+    font-size: 200%;
+    color:white;
+    font-family: Arial Black;
+}
 
-/*:host{
-    background: url("../../../assets/images/screen01-transparent.png");
+#pays{
+    position:absolute;
+    top:110px;
+    right: 20px;
+    left: 20px;
+    z-index:2;
+    color:white;
+}
 
-    /* Center and scale the image nicely */
-    /*background-repeat: no-repeat;*/
-/*}*/
+#tempDegres{
+    position:absolute;
+    top:400px;
+    right: 20px;
+    left: 20px;
+    z-index:2;
+    color:white;
+}
+
+#etatTemps{
+    position:absolute;
+    top:450px;
+    right: 20px;
+    left: 20px;
+    z-index:2;
+    color:white;
+}
+
