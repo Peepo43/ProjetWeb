@@ -3,13 +3,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {OpenWeatherMapService} from '../../open-weather-map.service';
 import { SunsetService } from '../../sunset.service';
 
-// TODO : Modifier appel méthode de getWeather pour sunset
-//        Mettre la map avec pos predefini
+// TODO : Modifier appel méthode de getWeather pour sunset et pour la map
+//        utiliser git mise en forme de OpenWeatherMap
+//        Mettre la map avec pos predefini    VV
 //        Mettre en forme le site web
-//        Logo + Ccarte en responsive
+//        Logo + Carte en responsive V
 //        Rajouter le texte de Fatih
 //        Interface = proto
-//        Interface = proto
+
 
 @Component({
   selector: 'app-formulaire',
@@ -25,8 +26,6 @@ export class FormulaireComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private openweathermap: OpenWeatherMapService,
               private sunsetService: SunsetService) { }
-    googleMapType = 'hybrid';
-
 
   ngOnInit(): void {
     this.formulaireSearchForm = this.formBuilder.group({
@@ -38,10 +37,13 @@ export class FormulaireComponent implements OnInit {
     this.openweathermap
       .getWeather(formValues.location)
       .subscribe(data => this.dataMeteo = data);
-    this.sunsetService
-      .getData(this.dataMeteo?.coord.lon, this.dataMeteo?.coord.lat)
-      .subscribe(data => this.dataSunset = data);
     console.log(this.dataMeteo);
+  }
+
+  getSunset(lon: number, lat: number): void {
+    this.sunsetService
+      .getData(lon, lat)
+      .subscribe(data => this.dataSunset = data);
   }
 }
 

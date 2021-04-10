@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class OpenWeatherMapService {
   private URL = 'http://api.openweathermap.org/data/2.5/weather?q=';
+  private URL2 = 'https://api.sunrise-sunset.org/json?lat=';
   private KEY = '&APPID=0d62963a0f6c90c582b71e8dbd7979e3';
 
   constructor(private httpClient: HttpClient) { }
@@ -14,6 +15,11 @@ export class OpenWeatherMapService {
   getWeather(location: string): Observable<any>{
    return this.httpClient
      .get(this.URL + location + this.KEY);
+  }
+
+  getData(lat: number, lng: number): Observable<any>{
+    return this.httpClient
+      .get(this.URL2 + lat + '&lng=' + lng);
   }
 }
 

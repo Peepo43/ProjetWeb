@@ -9,10 +9,11 @@
           id="Location"
           aria-describedby="Location"
           placeholder="Saisir une ville"
-          formControlName="location" />
+          formControlName="location"
+        />
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-success btn-md">
+        <button type="submit" class="btn btn-success btn-md" (click)="getSunset(this.dataMeteo?.coord.lon, this.dataMeteo?.coord.lat)">
           Chercher</button>
       </div>
       <div class="col-md-6">
@@ -34,5 +35,4 @@
         </p>
       </div>
     </form>
-  <agm-map [latitude]=this.dataMeteo?.coord.lat [longitude]=this.dataMeteo?.coord.lon [mapTypeId]='googleMapType'> </agm-map>
 </div>
