@@ -21,7 +21,7 @@
           Position : {{this.dataMeteo?.name}}
         </p>
         <p class="text-center">
-          Temperature en Kelvin : {{this.dataMeteo?.main.temp}}
+          Temperature en Kelvin : {{(this.dataMeteo?.main.temp-273.15).toFixed(2)}}
         </p>
         <p class="text-center">
           Levé : {{this.dataSunset?.results.sunrise}}

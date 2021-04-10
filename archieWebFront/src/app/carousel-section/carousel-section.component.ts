@@ -19,6 +19,6 @@ export class CarouselSectionComponent implements OnInit {
   //tabVille: Array<string> = ['London','Rio','Tokyo'];
 
   Londre="London";
-  Rio="Rio";
+  Rio="Rio de Janeiro";
   Angers="Angers"
 }
