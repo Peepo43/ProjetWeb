@@ -15,6 +15,10 @@ export class CarouselSectionComponent implements OnInit {
   imgName1 = "screen01";
   imgName2 = "screen02";
   imgName3 = "screen03";
-  temperature = 30;
 
+  //tabVille: Array<string> = ['London','Rio','Tokyo'];
+
+  Londre="London";
+  Rio="Rio";
+  Angers="Angers"
 }

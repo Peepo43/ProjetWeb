@@ -4,7 +4,7 @@
         <div class="screen01_img" >
             <img src="assets/images/{{img}}-transparent.png" alt="" />
             <p>Ecrire les donnes ici !!!</p>
-            <p>Il fait beau ici {{img}} {{temperatureVille}} {{ville}}</p>
+            <p>Il fait beau ici {{img}} {{(this.dataMeteo?.main.temp-273.15).toFixed(2)}} {{name}}</p>
         </div>
     </div>
 </div><!--End off Screen01-->
