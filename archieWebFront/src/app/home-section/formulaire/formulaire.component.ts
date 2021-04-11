@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {OpenWeatherMapService} from '../../open-weather-map.service';
 
@@ -8,6 +8,7 @@ import {OpenWeatherMapService} from '../../open-weather-map.service';
 //        Rajouter le texte de Fatih
 //        Interface = proto
 //        Relier la carte et openWeather
+//        Mettre dans des variable toute les data utilisé
 
 @Component({
   selector: 'app-formulaire',
@@ -15,11 +16,16 @@ import {OpenWeatherMapService} from '../../open-weather-map.service';
   styleUrls: ['./formulaire.component.css']
 })
 export class FormulaireComponent implements OnInit {
-  public formulaireSearchForm!: FormGroup;
-  public dataMeteo: any;
+  lat: number;
+  lon: number;
+  @Output() latitude = new EventEmitter<number>();
+  @Output() longitude = new EventEmitter<number>();
+
   constructor(private formBuilder: FormBuilder,
               private openweathermap: OpenWeatherMapService,
               ) { }
+  public formulaireSearchForm!: FormGroup;
+  public dataMeteo: any;
 
   ngOnInit(): void {
     this.formulaireSearchForm = this.formBuilder.group({
@@ -34,12 +40,26 @@ export class FormulaireComponent implements OnInit {
   getWeather(formValues: any): void{
     this.openweathermap
       .getWeather(formValues.location)
-      .subscribe(data => this.dataMeteo = data);
-    console.log(this.dataMeteo);
+      .subscribe(data => {
+        console.log(data);
+        this.dataMeteo = data;
+        this.lat = data.coord.lat;
+        this.lon = data.coord.lon;
+        this.sendLon();
+        this.sendLat();
+      });
   }
 
   getPosition(): string{
     return this.dataMeteo?.name;
+  }
+
+  public sendLat(): void{
+    this.latitude.emit(this.lat);
+  }
+
+  public sendLon(): void{
+    this.longitude.emit(this.lon);
   }
 
   getTemperature(): string{

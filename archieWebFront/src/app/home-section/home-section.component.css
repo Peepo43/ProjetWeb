@@ -5,3 +5,8 @@
 .main_home{
     margin-top: 3cm;
 }
+
+agm-map {
+  height: 400px;
+  width : 50%;
+}

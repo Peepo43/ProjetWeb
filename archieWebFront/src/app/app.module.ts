@@ -17,9 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { OpenWeatherMapService } from './open-weather-map.service';
-import { SunsetService } from './sunset.service';
 import { GoogleMapsModule } from '@angular/google-maps';
-
 
 @NgModule({
   declarations: [
@@ -40,9 +38,12 @@ import { GoogleMapsModule } from '@angular/google-maps';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA-9W_o6Cj79I2MZnqReqbrRNidLBInYn4'
+    })
   ],
-  providers: [OpenWeatherMapService, SunsetService],
+  providers: [OpenWeatherMapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

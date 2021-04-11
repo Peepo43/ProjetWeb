@@ -13,14 +13,8 @@
                     </div>
                 </div>
 
-                <google-map
-                  id="map"
-                  [zoom]="zoom"
-                  [center]="center"
-                  [options]="options"
-                ></google-map>
-                <app-formulaire></app-formulaire>
-
+              <agm-map [latitude]=this.latitude [longitude]=this.longitude [mapTypeId]='googleMapType' [zoom]='zoom'> </agm-map>
+              <app-formulaire (latitude)="receiveLat($event)" (longitude)="receiveLon($event)"></app-formulaire>
 
                 <div class="col-md-12" id="phone_presentation">
                     <div class="phone_one phone_attr1 text-center sm-m-top-50">
