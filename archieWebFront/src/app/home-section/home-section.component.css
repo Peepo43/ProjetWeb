@@ -7,7 +7,6 @@
     margin-top: 3cm;
 }
 
-<<<<<<< HEAD
 #mapGoogle {
     position: flex;
     height: auto;
@@ -18,9 +17,4 @@
 
 .map-container{
     width : 100%;
-=======
-agm-map {
-  height: 400px;
-  width : 50%;
->>>>>>> 56d282e2d897ae8f795e20aef51f297ee11f2c51
 }
