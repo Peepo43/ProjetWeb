@@ -1,7 +1,7 @@
 
 <div class="col-md-6">
     <h5 class="text-center my-4">Mettre une Ville:</h5>
-    <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value); getSunset(this.dataMeteo?.coord.lon, this.dataMeteo?.coord.lat)">
+    <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value)">
       <div class="form-group">
         <input
           class="form-control"
@@ -25,8 +25,6 @@
         <p class="text-center"> Levé : {{getLeve()}} </p>
 
         <p class="text-center"> Couché : {{getCouche()}} </p>
-
-        <p class="text-center"> Longueur : {{getDuree()}} </p>
       </div>
     </form>
 </div>

@@ -13,8 +13,6 @@ export class HomeSectionComponent implements OnInit {
     minZoom: 5
   };
 
-  //
-  //
   ngOnInit(): void {
     this.center = {
       lat: 46.00,
