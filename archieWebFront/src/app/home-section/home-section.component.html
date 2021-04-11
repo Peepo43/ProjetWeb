@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="main_home">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="home_text">
                         <h1 class="text-white">Découvrez la  météo autrement </h1>
                     </div>
@@ -13,14 +13,17 @@
                     </div>
                 </div>
 
-                <google-map
-                  id="map"
-                  [zoom]="zoom"
-                  [center]="center"
-                  [options]="options"
-                ></google-map>
                 <app-formulaire></app-formulaire>
 
+                <div  id="mapGoogle">
+                    <google-map
+                    id="map"
+                    [zoom]="zoom"
+                    [center]="center"
+                    [options]="options"
+                    ></google-map>
+                </div>    
+                
 
                 <div class="col-md-12" id="phone_presentation">
                     <div class="phone_one phone_attr1 text-center sm-m-top-50">

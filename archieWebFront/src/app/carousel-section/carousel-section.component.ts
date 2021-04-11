@@ -20,5 +20,7 @@ export class CarouselSectionComponent implements OnInit {
 
   Londre="London";
   Rio="Rio de Janeiro";
-  Angers="Angers"
+  Angers="Angers";
+  Tokyo="Tokyo";
+  Paris="Paris";
 }

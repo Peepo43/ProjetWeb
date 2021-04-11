@@ -12,6 +12,7 @@ export class ScreenComponentComponent implements OnInit {
 
   public dataMeteo: any;
   public dataSunset: any;
+  public description: any;
   public temperatureConv : any;
   public lon: number;
   public lat: number;
@@ -31,8 +32,10 @@ export class ScreenComponentComponent implements OnInit {
     this.openweathermap
     .getWeather(this.name)
     .subscribe(data => this.dataMeteo = data);
-    
+     /* Recuprere la temperature en kelvins*/
     this.temperatureConv=this.dataMeteo?.main.temp;
+    /* Description meteo (nuageux,ensolleilé...)*/
+    this.description=this.dataMeteo?.weather.main;
 
     this.sunsetService
       .getData(this.lon, this.lat)

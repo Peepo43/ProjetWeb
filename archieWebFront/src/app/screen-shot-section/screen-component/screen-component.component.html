@@ -2,12 +2,11 @@
 <div class="screen01 roomy-50">
     <div class="col-md-12">
         <div class="screen01_img" >
-            <img src="assets/images/{{img}}-transparent.png" alt="" />
+            <img src="assets/images/{{img}}-transparent.png" alt="image" />
             <p id="nomVille" >{{name}}</p>
             <p id="pays">{{this.dataMeteo?.sys.country}}</p>
             <p id="tempDegres">{{(this.dataMeteo?.main.temp-273.15).toFixed(2)}}° C </p>
             <p id="etatTemps">Levé : {{this.leverSoleil}}</p>
-
         </div>
     </div>
 </div><!--End off Screen01-->
