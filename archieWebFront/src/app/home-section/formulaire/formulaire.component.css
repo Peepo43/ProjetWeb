@@ -28,6 +28,13 @@ h3{
     font-family: 'Ubuntu', sans-serif;
 }
 
+p{
+    color:white;
+    font-family: fontawesome-webfont;
+    font-weight: 900;
+}
+
+
 @media (min-width: 992px) and (max-width: 1199px) {
     #formulaire{
       margin-top:10px;

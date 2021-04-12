@@ -18,17 +18,40 @@
     </div>
     <div id="ResultatRecherche" class="col-md-6" *ngIf="flag">
       <h3 class="text-center my-4">Résultat:</h3>
-      <p class="text-center" > Position : {{getPosition()}} </p>
-
-      <p class="text-center"> Temperature en Celsius: {{getTemperature()}} </p>
-
-      <p class="text-center"> Levé : {{getLeve()}} </p>
-
-      <p class="text-center"> Couché : {{getCouche()}} </p>
-
-      <p class="text-center"> Pression : {{getPression()}} </p>
-
-      <p class="text-center"> Humidité : {{getHumidite()}} </p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Valeur</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Position</td>
+            <td>{{getPosition()}}</td>
+          </tr>
+          <tr>
+            <td>Température (°C)</td>
+            <td> {{getTemperature()}}</td>
+          </tr>
+          <tr>
+            <td>Levé</td>
+            <td>{{getLeve()}}</td>
+          </tr>
+          <tr>
+            <td>Couché</td>
+            <td>{{getCouche()}}</td>
+          </tr>
+          <tr>
+            <td>Pression</td>
+            <td> {{getPression()}}</td>
+          </tr>
+          <tr>
+            <td> Humidité</td>
+            <td> {{getHumidite()}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </form>
 </div>
