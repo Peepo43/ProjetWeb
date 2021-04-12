@@ -15,8 +15,8 @@ agm-map {
     display: inherit;
 
     height: 500px;
-    width: 80%;
-    margin-top: 300px;
+    width: 100%;
+    margin-top: 475px;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -26,6 +26,7 @@ agm-map {
         margin-bottom: 20px;
         height: 500px;
         width: 100%;
+
     }
 }
 @media (max-width: 991px) {

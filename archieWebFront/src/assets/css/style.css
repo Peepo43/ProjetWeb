@@ -91,7 +91,7 @@ section { overflow: hidden; }
 }
 
 .roomy-50 {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-bottom: 50px;
 }
 
@@ -745,7 +745,7 @@ textarea::-ms-input-placeholder{
 }
 /*heading title all area*/
 .head_title{
-    padding-bottom: 7.143rem;
+    /*padding-bottom: 7.143rem;*/
     overflow: hidden;
 }
 .head_title h2{
