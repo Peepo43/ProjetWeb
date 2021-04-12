@@ -17,6 +17,7 @@ import {OpenWeatherMapService} from '../../open-weather-map.service';
 export class FormulaireComponent implements OnInit {
   lat: number;
   lon: number;
+  flag = false;
   @Output() latitude = new EventEmitter<number>();
   @Output() longitude = new EventEmitter<number>();
 
@@ -34,6 +35,7 @@ export class FormulaireComponent implements OnInit {
 
   sendToAPIXU(formValues: any): void {
     this.getWeather(formValues);
+    this.flag = true;
   }
 
   getWeather(formValues: any): void{
