@@ -941,47 +941,6 @@ Home Section style
     margin-left:10px;
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    #map{
-        display: inline-flex;
-        height: auto;
-        width: 100%;
-    }
-}
-@media (max-width: 991px) {
-    #map{
-        display: inline-flex;
-        height: auto;
-        width: 100%;
-    }
-}
-
-@media  (max-width: 768px) {
-    #map{
-        display: inline-flex;
-        height: auto;
-        width: 100%;
-    }
-}
-
-@media (max-width: 479px) {
-    #map{
-        display: inline-flex;
-        height: auto;
-        width: 100%;
-    }
-}
-
-@media (max-width: 400px) {
-    #map{
-        display: inline-flex;
-        height: auto;
-        width: 100%;
-    }
-
-}
-
-
 .scrooldown{
     position: absolute;
     left: 48.5%;
