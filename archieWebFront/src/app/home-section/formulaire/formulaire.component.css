@@ -1,9 +1,73 @@
+@media (min-width: 992px) and (max-width: 1199px) {
+    #formulaire{
+      margin-top:10px;
+    }
 
-agm-map {
-  height: 400px;
-  width : 400px;
+    #ResultatRecherche{
+        display: block;
+        text-align: center;
+        float: inherit;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 991px) {
+    #formulaire{
+      margin-top:100px;
+    }
+
+    #ResultatRecherche{
+        display: block;
+        text-align: center;
+        float: inherit;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-#formulaire{
-  margin-top:400px; 
+@media  (max-width: 768px) {
+    #formulaire{
+      margin-top:50px;
+    }
+
+    #ResultatRecherche{
+        display: block;
+        text-align: center;
+        float: inherit;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 479px) {
+    #formulaire{
+      margin-top:50px;
+    }
+
+    #ResultatRecherche{
+        display: block;
+        text-align: center;
+        float: inherit;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    #formulaire{
+      margin-top:50px;
+    }
+
+    #ResultatRecherche{
+        display: block;
+        text-align: center;
+        float: inherit;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

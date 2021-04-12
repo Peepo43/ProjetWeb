@@ -1,5 +1,5 @@
 
-<div class="col-md-6">
+<div id="formulaire" class="col-md-6">
   <h5 class="text-center my-4">Mettre une Ville:</h5>
   <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value)">
     <div class="form-group">
@@ -16,7 +16,7 @@
       <button type="submit" class="btn btn-success btn-md">
         Chercher</button>
     </div>
-    <div class="col-md-6" *ngIf="flag">
+    <div id="ResultatRecherche" class="col-md-6" *ngIf="flag">
       <h3 class="text-center my-4">Résultat:</h3>
       <p class="text-center" > Position : {{getPosition()}} </p>
 
