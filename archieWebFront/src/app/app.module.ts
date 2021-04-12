@@ -11,7 +11,6 @@ import { DownloadSectionComponent } from './download-section/download-section.co
 import { FooterComponent } from './footer/footer.component';
 import { ScreenComponentComponent } from './screen-shot-section/screen-component/screen-component.component';
 import { CarouselSectionComponent } from './carousel-section/carousel-section.component';
-import { CarouselComponentComponent } from './carousel-section/carousel-component/carousel-component.component';
 import { FormulaireComponent } from './home-section/formulaire/formulaire.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +30,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
     FooterComponent,
     ScreenComponentComponent,
     CarouselSectionComponent,
-    CarouselComponentComponent,
     FormulaireComponent
   ],
   imports: [
