@@ -1,46 +1,36 @@
 <section id="home" class="home">
-    <div class="container">
-        <div class="row">
-            <div class="main_home">
-                <div class="col-md-12">
-                    <div class="home_text">
-                        <h1 class="text-white">Découvrez la  météo autrement </h1>
-                    </div>
+  <div class="container">
+    <div class="row">
+      <div class="main_home">
+        <div class="col-md-6">
+          <div class="home_text">
+            <h1 class="text-white">Découvrez la  météo autrement </h1>
+          </div>
 
-                    <div class="home_btns m-top-40">
-                        <a href="" class="btn btn-danger m-top-20">Téléchargement</a>
-                        <a href="" class="btn btn-primary m-top-20">Caractéristique</a>
-                    </div>
-                </div>
+          <div class="home_btns m-top-40">
+            <a href="" class="btn btn-danger m-top-20">Téléchargement</a>
+            <a href="" class="btn btn-primary m-top-20">Caractéristique</a>
+          </div>
+        </div>
 
-<<<<<<< HEAD
-                <app-formulaire></app-formulaire>
+        <agm-map [latitude]=this.latitude [longitude]=this.longitude [mapTypeId]='googleMapType' [zoom]='zoom'> </agm-map>
+        <app-formulaire (latitude)="receiveLat($event)" (longitude)="receiveLon($event)"></app-formulaire>
 
-                <div  id="mapGoogle">
-                    <google-map
-                    id="map"
-                    [zoom]="zoom"
-                    [center]="center"
-                    [options]="options"
-                    ></google-map>
-                </div>    
-                
-            
-                <div class="col-md-12" id="phone_presentation">
-                    <div class="phone_one phone_attr1 text-center sm-m-top-50">
-                        <div class="attr_deg">9&deg;</div>
-                        <div class="attr_rio text-uppercase">Rio</div>
-                        <div class="attr_sun text-uppercase text-white">Soleil</div>
-                        <div class="attr_lon text-uppercase text-white">Londre</div>
-                        <img src="assets/images/phone01.png" alt="" />
-                    </div>
-                </div>
+        <div class="col-md-12" id="phone_presentation">
+          <div class="phone_one phone_attr1 text-center sm-m-top-50">
+            <div class="attr_deg">9&deg;</div>
+            <div class="attr_rio text-uppercase">Rio</div>
+            <div class="attr_sun text-uppercase text-white">Soleil</div>
+            <div class="attr_lon text-uppercase text-white">Londre</div>
+            <img src="assets/images/phone01.png" alt="" />
+          </div>
+        </div>
 
-            </div>
-            <div class="scrooldown">
-                <a href="#features"><i class="fa fa-chevron-down"></i></a>
-            </div>
+      </div>
+      <div class="scrooldown">
+        <a href="#features"><i class="fa fa-chevron-down"></i></a>
+      </div>
 
-        </div><!--End off row-->
-    </div><!--End off container -->
+    </div><!--End off row-->
+  </div><!--End off container -->
 </section> <!--End off Home Sections-->

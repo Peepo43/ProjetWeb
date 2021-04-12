@@ -23,7 +23,7 @@ export class FormulaireComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private openweathermap: OpenWeatherMapService,
-              ) { }
+  ) { }
   public formulaireSearchForm!: FormGroup;
   public dataMeteo: any;
 
