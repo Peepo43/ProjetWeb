@@ -28,10 +28,9 @@ h3{
     font-family: 'Ubuntu', sans-serif;
 }
 
-p{
-    color:white;
-    font-family: fontawesome-webfont;
-    font-weight: 900;
+
+.table-bordered{
+    color : black;
 }
 
 

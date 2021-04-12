@@ -1,6 +1,6 @@
 
 <div id="formulaire" class="col-md-6">
-  <h5 class="text-center my-4">Mettre une Ville:</h5>
+  <h5 class="text-center my-4">Entrez une Ville:</h5>
   <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value)">
     <div class="form-group">
       <input
@@ -18,37 +18,38 @@
     </div>
     <div id="ResultatRecherche" class="col-md-6" *ngIf="flag">
       <h3 class="text-center my-4">Résultat:</h3>
-      <table class="table table-bordered">
+      
+      <table class="table table-bordered table-dark table-hover">
         <thead>
           <tr>
-            <th>Description</th>
-            <th>Valeur</th>
+            <th><p class="text-center">Description</p></th>
+            <th><p class="text-center">Valeur</p></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Position</td>
-            <td>{{getPosition()}}</td>
+            <td><p class="text-center">Position</p></td>
+            <td><p class="text-center">{{getPosition()}}</p></td>
           </tr>
           <tr>
-            <td>Température (°C)</td>
-            <td> {{getTemperature()}}</td>
+          <td><p class="text-center">Température (°C)</p></td>
+            <td><p class="text-center">{{getTemperature()}} </p></td>
           </tr>
           <tr>
-            <td>Levé</td>
-            <td>{{getLeve()}}</td>
+            <td><p class="text-center">Levé</p></td>
+            <td><p class="text-center">{{getLeve()}}</p></td>
           </tr>
           <tr>
-            <td>Couché</td>
-            <td>{{getCouche()}}</td>
+            <td><p class="text-center">Couché</p></td>
+            <td><p class="text-center">{{getCouche()}}</p></td>
           </tr>
           <tr>
-            <td>Pression</td>
-            <td> {{getPression()}}</td>
+            <td><p class="text-center">Pression</p></td>
+            <td><p class="text-center"> {{getPression()}}</p></td>
           </tr>
           <tr>
-            <td> Humidité</td>
-            <td> {{getHumidite()}}</td>
+            <td><p class="text-center"> Humidité</p></td>
+            <td><p class="text-center"> {{getHumidite()}}</p></td>
           </tr>
         </tbody>
       </table>
