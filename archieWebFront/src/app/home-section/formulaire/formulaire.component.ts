@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {OpenWeatherMapService} from '../../open-weather-map.service';
 
 // TODO : utiliser git mise en forme de OpenWeatherMap
-//        Mettre la map avec pos predefini    VV
 //        Mettre en forme le site web
 //        Rajouter le texte de Fatih
 //        Interface = proto
