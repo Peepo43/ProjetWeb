@@ -2,11 +2,9 @@ import { Component, OnInit , Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {OpenWeatherMapService} from '../../open-weather-map.service';
 
-// TODO : utiliser git mise en forme de OpenWeatherMap
-//        Mettre en forme le site web
+// TODO : Mettre en forme le site web
 //        Rajouter le texte de Fatih
 //        Interface = proto
-//        Relier la carte et openWeather
 //        Mettre dans des variable toute les data utilisé
 
 @Component({
@@ -15,8 +13,14 @@ import {OpenWeatherMapService} from '../../open-weather-map.service';
   styleUrls: ['./formulaire.component.css']
 })
 export class FormulaireComponent implements OnInit {
+  nom: string;
+  temperature: string;
   lat: number;
   lon: number;
+  leve: string;
+  couche: string;
+  pression: string;
+  humidite: string;
   flag = false;
   @Output() latitude = new EventEmitter<number>();
   @Output() longitude = new EventEmitter<number>();
@@ -25,7 +29,6 @@ export class FormulaireComponent implements OnInit {
               private openweathermap: OpenWeatherMapService,
   ) { }
   public formulaireSearchForm!: FormGroup;
-  public dataMeteo: any;
 
   ngOnInit(): void {
     this.formulaireSearchForm = this.formBuilder.group({
@@ -42,17 +45,22 @@ export class FormulaireComponent implements OnInit {
     this.openweathermap
       .getWeather(formValues.location)
       .subscribe(data => {
-        console.log(data);
-        this.dataMeteo = data;
+        this.nom = data.name;
+        this.temperature = data.main.temp;
         this.lat = data.coord.lat;
         this.lon = data.coord.lon;
+        this.leve = data.sys.sunrise;
+        this.couche = data.sys.sunset;
+        this.pression = data.main.pressure;
+        this.humidite = data.main.humidity;
+
         this.sendLon();
         this.sendLat();
       });
   }
 
   getPosition(): string{
-    return this.dataMeteo?.name;
+    return this.nom;
   }
 
   public sendLat(): void{
@@ -64,14 +72,14 @@ export class FormulaireComponent implements OnInit {
   }
 
   getTemperature(): string{
-    if ((this.dataMeteo?.main.temp - 273.15) < -100 || isNaN(this.dataMeteo?.main.temp - 273.15)){
+    if ((Number(this.temperature) - 273.15) < -100 || isNaN(Number(this.temperature) - 273.15)){
       return '';
     }
-    return (this.dataMeteo?.main.temp - 273.15).toFixed(2) + '°';
+    return (Number(this.temperature) - 273.15).toFixed(2) + '°';
   }
 
   getLeve(): string{
-    const date = new Date(this.dataMeteo?.sys.sunrise * 1000).toLocaleTimeString('en-GB');
+    const date = new Date(Number(this.leve) * 1000).toLocaleTimeString('en-GB');
     if (date === 'Invalid Date'){
       return '';
     }
@@ -81,7 +89,7 @@ export class FormulaireComponent implements OnInit {
   }
 
   getCouche(): string{
-    const date = new Date(this.dataMeteo?.sys.sunset * 1000).toLocaleTimeString('en-GB');
+    const date = new Date(Number(this.couche) * 1000).toLocaleTimeString('en-GB');
     if (date === 'Invalid Date'){
       return '';
     }
@@ -91,19 +99,19 @@ export class FormulaireComponent implements OnInit {
   }
 
   getPression(): string{
-    if (isNaN(Number(this.dataMeteo?.main.pressure))) {
+    if (isNaN(Number(this.pression))) {
       return '';
     }
     else{
-      return Number(this.dataMeteo?.main.pressure) + ' hPa';
+      return Number(this.pression) + ' hPa';
     }
   }
   getHumidite(): string{
-    if (isNaN(Number(this.dataMeteo?.main.humidity))) {
+    if (isNaN(Number(this.humidite))) {
       return '';
     }
     else{
-      return Number(this.dataMeteo?.main.humidity) + ' %';
+      return Number(this.humidite) + ' %';
     }
   }
 }
