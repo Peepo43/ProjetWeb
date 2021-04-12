@@ -15,3 +15,53 @@ agm-map {
   height: 400px;
   width : 50%;
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #map{
+        display: inline-flex;
+        margin: inherit;
+        margin-bottom: 20px;
+        height: 500px;
+        width: 100%;
+    }
+}
+@media (max-width: 991px) {
+    #map{
+        display: inline-flex;
+        margin: inherit;
+        margin-bottom: 20px;
+        height: 500px;
+        width: 100%;
+    }
+}
+
+@media  (max-width: 768px) {
+    #map{
+        display: inline-flex;
+        margin: inherit;
+        margin-bottom: 20px;
+        height: 500px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    #map{
+        display: inline-flex;
+        margin: inherit;
+        margin-bottom: 20px;
+        height: 500px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    #map{
+        display: inline-flex;
+        margin: inherit;
+        margin-bottom: 20px;
+        height: 500px;
+        width: 100%;
+    }
+
+}
