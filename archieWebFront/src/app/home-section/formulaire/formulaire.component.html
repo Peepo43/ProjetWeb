@@ -1,33 +1,34 @@
-<section id="formulaire">
-  <div class="col-md-6">
-    <h5 class="text-center my-4">Mettre une Ville:</h5>
-    <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value)">
-      <div class="form-group">
-        <input
-          class="form-control"
-          type="text"
-          id="Location"
-          aria-describedby="Location"
-          placeholder="Saisir une ville"
-          formControlName="location"
-        />
-      </div>
-      <div class="text-center">
-        <button type="submit" class="btn btn-success btn-md">
-          Chercher</button>
-      </div>
-      <div class="col-md-6">
-        <h3 class="text-center my-4">Résultat:</h3>
-        <p class="text-center" > Position : {{getPosition()}} </p>
-  
-        <p class="text-center"> Temperature en Celsius: {{getTemperature()}} </p>
-  
-        <p class="text-center"> Levé : {{getLeve()}} </p>
-  
-        <p class="text-center"> Couché : {{getCouche()}} </p>
-  
-        <p class="text-center"> Longueur : {{getDuree()}} </p>
-      </div>
-    </form>
-  </div>
-</section>>
+
+<div class="col-md-6">
+  <h5 class="text-center my-4">Mettre une Ville:</h5>
+  <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value)">
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        id="Location"
+        aria-describedby="Location"
+        placeholder="Saisir une ville"
+        formControlName="location"
+      />
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success btn-md">
+        Chercher</button>
+    </div>
+    <div class="col-md-6">
+      <h3 class="text-center my-4">Résultat:</h3>
+      <p class="text-center" > Position : {{getPosition()}} </p>
+
+      <p class="text-center"> Temperature en Celsius: {{getTemperature()}} </p>
+
+      <p class="text-center"> Levé : {{getLeve()}} </p>
+
+      <p class="text-center"> Couché : {{getCouche()}} </p>
+
+      <p class="text-center"> Pression : {{getPression()}} </p>
+
+      <p class="text-center"> Humidité : {{getHumidite()}} </p>
+    </div>
+  </form>
+</div>

@@ -88,6 +88,23 @@ export class FormulaireComponent implements OnInit {
       return date;
     }
   }
+
+  getPression(): string{
+    if (isNaN(Number(this.dataMeteo?.main.pressure))) {
+      return '';
+    }
+    else{
+      return Number(this.dataMeteo?.main.pressure) + ' hPa';
+    }
+  }
+  getHumidite(): string{
+    if (isNaN(Number(this.dataMeteo?.main.humidity))) {
+      return '';
+    }
+    else{
+      return Number(this.dataMeteo?.main.humidity) + ' %';
+    }
+  }
 }
 
 // 0d62963a0f6c90c582b71e8dbd7979e3
