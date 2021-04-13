@@ -2,11 +2,6 @@ import { Component, OnInit , Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {OpenWeatherMapService} from '../../open-weather-map.service';
 
-// TODO : Mettre en forme le site web
-//        Rajouter le texte de Fatih
-//        Interface = proto
-//        Mettre dans des variable toute les data utilisé
-
 @Component({
   selector: 'app-formulaire',
   templateUrl: './formulaire.component.html',

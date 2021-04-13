@@ -4,9 +4,9 @@
         <div class="screen01_img" >
             <img src="assets/images/{{img}}-transparent.png" alt="image" />
             <p id="nomVille" >{{name}}</p>
-            <p id="pays">{{this.dataMeteo?.sys.country}}</p>
-            <p id="tempDegres">{{(this.dataMeteo?.main.temp-273.15).toFixed(2)}}° C </p>
-            <p id="etatTemps">Levé : {{this.leverSoleil}}</p>
+            <p id="pays">{{getPays()}}</p>
+            <p id="tempDegres">{{getTemperature()}}° C </p>
+            <p id="etatTemps">Levé : {{getLeve()}}</p>
         </div>
     </div>
 </div><!--End off Screen01-->
