@@ -1,7 +1,7 @@
 
 <div id="formulaire" class="col-md-6">
   <h5 class="text-center my-4">Entrez une Ville:</h5>
-  <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPIXU(formulaireSearchForm.value)">
+  <form [formGroup]="formulaireSearchForm" (ngSubmit)="sendToAPI(formulaireSearchForm.value)">
     <div class="form-group">
       <input
         class="form-control"
@@ -18,7 +18,7 @@
     </div>
     <div id="ResultatRecherche" class="col-md-6" *ngIf="flag">
       <h3 class="text-center my-4">Résultat:</h3>
-      
+
       <table class="table table-bordered table-dark table-hover">
         <thead>
           <tr>

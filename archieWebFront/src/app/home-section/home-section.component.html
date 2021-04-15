@@ -14,7 +14,7 @@
         </div>
 
         <app-formulaire (latitude)="receiveLat($event)" (longitude)="receiveLon($event)"></app-formulaire>
-        <agm-map id="map" [latitude]=this.latitude [longitude]=this.longitude [mapTypeId]='googleMapType' [zoom]='zoom'> </agm-map>
+        <agm-map id="map" [latitude]=this.latitude [longitude]=this.longitude [mapTypeId]='googleMapType' [zoom]='zoom'></agm-map>
 
         <div class="col-md-12" id="phone_presentation">
           <div class="phone_one phone_attr1 text-center sm-m-top-50">
